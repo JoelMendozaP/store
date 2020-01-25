@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import {Product} from './produc.model';
-  import { from } from 'rxjs';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +11,10 @@ import {Product} from './produc.model';
 export class AppComponent {
   title = 'platzi-store';
 
-  items = ['nicolas', 'julian','perez'];
+  items = ['nicolas', 'julian', 'perez'];
   objeto = {};
+
+  power = 10;
 
   products: Product[] = [
     {
@@ -58,10 +60,14 @@ export class AppComponent {
       description: 'bla bla bla bla'
     },
   ];
-  addItem(){
+  addItem() {
     this.items.push('nuevo item');
   }
-  deleteItem(index: number){
+  deleteItem(index: number) {
     this.items.splice(index, 1);
+  }
+  clickProduct(id: number) {
+    console.log('product');
+    console.log(id);
   }
 }
